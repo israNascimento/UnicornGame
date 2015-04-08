@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    [Header("Movimentation")]
     public float speed;
 
 
@@ -19,4 +18,6 @@ public class Player : MonoBehaviour
             rigidbody2D.AddForce(new Vector2(Input.acceleration.x*50, 0));
 		}
 	}
+
+ 
 }
