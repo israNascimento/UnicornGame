@@ -3,6 +3,12 @@ using System.Collections;
 
 public class CollisionDetect : MonoBehaviour 
 {
+    Paint paint;
+
+    void Start()
+    {
+        paint = GameObject.Find("GameManager").GetComponent<Paint>();
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -10,7 +16,7 @@ public class CollisionDetect : MonoBehaviour
         {
             int index = collision.gameObject.name.IndexOf('_');
             string color = collision.gameObject.name.Remove(index);
-            print("color: .." + color + ".");
+            paint.PaintObject(color);
         }
     }
 }
