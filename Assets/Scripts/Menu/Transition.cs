@@ -8,9 +8,10 @@ public class Transition : MonoBehaviour
 	
     public void ChangeScene(string scene)
     {
+
 		foreach (GameObject g in buttons)
 		{
-			g.GetComponent<Animator>().SetBool("GoConfig", true);
+			g.GetComponent<Animator>().SetBool("Go"+scene, !g.GetComponent<Animator>().GetBool("Go"+scene));
 		}
     }
 }
