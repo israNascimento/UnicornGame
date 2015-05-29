@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 	
 	void Update () 
 	{
-		if (Input.acceleration.x != 0) 
+        if (Input.acceleration.x != 0) 
 		{
             rigidbody2D.AddForce(new Vector2(Input.acceleration.x*50, 0));
 		}
