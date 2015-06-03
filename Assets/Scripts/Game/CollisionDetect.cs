@@ -10,7 +10,7 @@ public class CollisionDetect : MonoBehaviour
         paint = GameObject.Find("GameManager").GetComponent<Paint>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Contains("Paint"))
         {

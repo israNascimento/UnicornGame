@@ -21,15 +21,11 @@ public class CreateElements : MonoBehaviour {
     public GameObject[] clouds;
     public float currentTimeClouds;
 
-	void Start ()
+    void Update () 
     {
-        /*position = new Vector3(Random.Range(-6.32f, 6.75f), 12, -1);
-            Instantiate(obstacles[Random.Range(0, obstacles.Length)], position, Quaternion.identity);
-            currentTime = 0;*/
-	}
-	
-	void Update () 
-    {
+        if (!GameManager.gameStart)
+            return;
+
         if (GetTime(3, ref currentTimeEnemys))
         {
             position = new Vector3(Random.Range(-6.32f, 6.75f), 12, -1);
