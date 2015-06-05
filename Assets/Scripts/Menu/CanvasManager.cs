@@ -1,29 +1,34 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
-public class CanvasManager : MonoBehaviour 
+
+public class CanvasManager : MonoBehaviour
 {
-    public Canvas canvasMenu;
-    public Canvas canvasGame;
-    public Animator Animators;
+    public Animator[] anims;
     public Image imageSound;
-
-    void Start()
-    {
-        canvasGame.enabled = false;
-    }
-
+  
     public void PlayGame()
     {
-        canvasMenu.enabled = false;
-        canvasGame.enabled = true;
+        ChangeAnim("Game");
         GameManager.gameStart = true;
     }
 
-    public void Config()
+    public void ButtonClick(string s)
     {
-        Animators.SetBool("Config", !Animators.GetBool("Config"));
+        ChangeAnim(s);
+    }
+
+    private void ChangeAnim(string s)
+    {
+        foreach (Animator a in anims)
+        {
+            if (a.GetBool(s) != null)
+            {
+                a.SetBool(s, !a.GetBool(s));
+            }
+        }
     }
 
     public void SoundClick()
