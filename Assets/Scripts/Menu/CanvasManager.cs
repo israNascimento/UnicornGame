@@ -40,4 +40,9 @@ public class CanvasManager : MonoBehaviour
             imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_On");
         GameManager.soundOn = !GameManager.soundOn;
     }
+
+    public void Pause()
+    {
+        GameManager.isPaused = !GameManager.isPaused;
+    }
 }

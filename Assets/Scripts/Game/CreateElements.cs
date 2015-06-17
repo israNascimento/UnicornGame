@@ -26,10 +26,11 @@ public class CreateElements : MonoBehaviour {
         if (!GameManager.gameStart)
             return;
 
+
         if (GetTime(3, ref currentTimeEnemys))
         {
             position = new Vector3(Random.Range(-6.32f, 6.75f), 12, -1);
-            Instantiate(obstacles[Random.Range(0, obstacles.Length)], position, Quaternion.identity);
+           // Instantiate(obstacles[Random.Range(0, obstacles.Length)], position, Quaternion.identity);
         }
 
         if (GetTime(3, ref currentTimeClouds))
@@ -40,7 +41,7 @@ public class CreateElements : MonoBehaviour {
         random = Random.Range(0, limitNumber);
         if (random == numberToInstantiate)
         {
-            position = new Vector3(Random.Range(-6.32f, 6.75f), 12, -1);
+            position = new Vector3(Random.Range(-6.32f, 6.75f), 25, -1);
             Instantiate(paints[Random.Range(0, paints.Length)], position, Quaternion.identity);
         }
 	}

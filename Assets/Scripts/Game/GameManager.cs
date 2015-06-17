@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static bool gameStart;
     public static bool soundOn = true;
     public Animator[] anim;
+    public static bool isPaused = false;
 
 	void Start () 
     {
@@ -14,10 +15,11 @@ public class GameManager : MonoBehaviour
 	
 	void Update () 
     {
-        foreach (Animator a in anim)
+        /*foreach (Animator a in anim)
         {
             a.SetBool("GameStart", gameStart);
-        }
+        }*/
 
+      
 	}
 }

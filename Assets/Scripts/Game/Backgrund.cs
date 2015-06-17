@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Backgrund : MonoBehaviour
 {
-    const float SPEED = -0.008f;
+    const float SPEED = -1f;
 
 	void Start () 
     {
@@ -12,6 +12,6 @@ public class Backgrund : MonoBehaviour
 	
 	void Update () 
     {
-        transform.position += new Vector3(0, SPEED);
+        transform.position += new Vector3(0, SPEED*Time.deltaTime);
 	}
 }
