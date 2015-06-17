@@ -21,9 +21,16 @@ public class CreateElements : MonoBehaviour {
     public GameObject[] clouds;
     public float currentTimeClouds;
 
-    void Update () 
+    GameManager gameManager;
+
+    void Start()
     {
-        if (!GameManager.gameStart)
+        gameManager = GameManager.gameManager;
+    }
+
+    void FixedUpdate() 
+    {
+        if (!gameManager.gameStart)
             return;
 
         if (GetTime(3, ref currentTimeEnemys))

@@ -8,17 +8,23 @@ public class CanvasManager : MonoBehaviour
 {
     public Animator[] anims;
     public Image imageSound;
-  
+    GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameManager.gameManager;
+    }
     public void PlayGame()
     {
         ChangeAnim("Game");
-        GameManager.gameStart = true;
+        gameManager.gameStart = true;
     }
 
     public void ButtonClick(string s)
     {
         ChangeAnim(s);
     }
+
 
     private void ChangeAnim(string s)
     {
@@ -33,11 +39,11 @@ public class CanvasManager : MonoBehaviour
 
     public void SoundClick()
     {
-        if (GameManager.soundOn)
+        if (gameManager.soundOn)
             imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_Off");
 
         else
             imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_On");
-        GameManager.soundOn = !GameManager.soundOn;
+        gameManager.soundOn = !gameManager.soundOn;
     }
 }
