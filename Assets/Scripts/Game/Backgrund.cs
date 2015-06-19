@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Backgrund : MonoBehaviour
 {
-    const float SPEED = -1f;
+    const float SPEED = -0.5f;
 
 	void Start () 
     {

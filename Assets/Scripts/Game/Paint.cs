@@ -16,13 +16,11 @@ public class Paint : MonoBehaviour
     
     public GameObject[] mapPB;
     public ScrollBarController[] scrollController;
-    private Dictionary<string, bool> isPainted = new Dictionary<string, bool>();
     private const int TIME = 10;
     GameManager gameManager;
 
     void Start()
     {
-        isPainted.Add("Vermelho", false);
         gameManager = GameManager.gameManager;
     }
 
@@ -52,7 +50,6 @@ public class Paint : MonoBehaviour
         foreach (GameObject g in mapPB)
             g.transform.FindChild(color).gameObject.SetActive(true);
 
-
         foreach (ScrollBarController sbc in scrollController)
         {
             if (sbc.key.Equals(color))
@@ -68,6 +65,6 @@ public class Paint : MonoBehaviour
         foreach (GameObject g in mapPB)
         {
             g.transform.FindChild(color).gameObject.SetActive(false);
-        }        
+        }
     }
 }

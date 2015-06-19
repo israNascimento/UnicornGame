@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     void SetScore(int _numberOfColors)
     {
+        if (!gameStart)
+            return;
         score += 30 * _numberOfColors+1;
         scoreText.text = "PONTOS: " + score;
     }

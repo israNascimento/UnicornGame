@@ -43,7 +43,7 @@ public class CanvasManager : MonoBehaviour
             imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_Off");
 
         else
-            imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_On");
+            imageSound.sprite = Resources.Load<Sprite>("Menu/Botoes-06");
         gameManager.soundOn = !gameManager.soundOn;
     }
 
