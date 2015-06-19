@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
         gameManager = GameManager.gameManager;
-        print(gameManager);
 	}
 	
 	void Update () 
@@ -17,6 +16,6 @@ public class Player : MonoBehaviour
         if (!gameManager.gameStart)
             return;
 
-        rigidbody2D.AddForce(new Vector2(Input.acceleration.x*1000, 0));
-	}
+          this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Input.acceleration.x * 5, 0));
+    } 
 }

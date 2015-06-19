@@ -14,6 +14,7 @@ public class CanvasManager : MonoBehaviour
     {
         gameManager = GameManager.gameManager;
     }
+  
     public void PlayGame()
     {
         ChangeAnim("Game");
@@ -24,7 +25,6 @@ public class CanvasManager : MonoBehaviour
     {
         ChangeAnim(s);
     }
-
 
     private void ChangeAnim(string s)
     {
@@ -46,4 +46,9 @@ public class CanvasManager : MonoBehaviour
             imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_On");
         gameManager.soundOn = !gameManager.soundOn;
     }
+
+   /* public void Pause()
+    {
+        gameManager.isPaused = !gameManager.isPaused;
+    }*/
 }

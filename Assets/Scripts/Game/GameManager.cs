@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public bool soundOn = true;
     public Animator[] anim;
-    public int currentColors, score;
+    public int numberOfColors, score;
     public Text scoreText;
 
     public static GameManager gameManager;
@@ -18,24 +18,23 @@ public class GameManager : MonoBehaviour
         gameManager = gameObject.GetComponent<GameManager>();
     }
 
-    void Start () 
+    void Start()
     {
         score = 0;
-	}
-	
-	void FixedUpdate () 
+    }
+
+    void FixedUpdate()
     {
         foreach (Animator a in anim)
         {
             a.SetBool("GameStart", gameStart);
         }
-        SetScore(currentColors);
-	}
+        SetScore(numberOfColors);
+    }
 
-    void SetScore(int numberOfColors)
+    void SetScore(int _numberOfColors)
     {
-        score += 1+numberOfColors;
+        score += 1 + _numberOfColors;
         scoreText.text = "PONTOS: " + score;
-        print(numberOfColors);
     }
 }
