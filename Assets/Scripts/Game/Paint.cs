@@ -27,6 +27,7 @@ public class Paint : MonoBehaviour
         gameManager = GameManager.gameManager;
     }
 
+<<<<<<< HEAD
     void Update()
     {
         foreach (ScrollBarController sbc in scrollController)
@@ -36,6 +37,18 @@ public class Paint : MonoBehaviour
                 sbc.scroll.enabled = true;
                 sbc.currentTime -= Time.deltaTime;
                 sbc.scroll.size = sbc.currentTime/TIME;
+=======
+   // public Dictionary<string, GameObject> paints = new Dictionary<string, GameObject>();
+
+    public GameObject[] mapPB;
+	void Start ()
+    {
+       /* paints.Add("Vermelho", GameObject.Find("Yellow_PB"));
+        paints.Add("Green",  GameObject.Find("Green_PB"));
+        paints.Add("Blue",   GameObject.Find("Blue_PB"));
+        paints.Add("Gray",   GameObject.Find("Gray_PB"));*/
+	}
+>>>>>>> origin/master
 
                 if (sbc.currentTime < 0.1f)
                 {
@@ -50,6 +63,7 @@ public class Paint : MonoBehaviour
     {
         foreach (GameObject g in mapPB)
             g.transform.FindChild(color).gameObject.SetActive(true);
+<<<<<<< HEAD
 
         foreach (ScrollBarController sbc in scrollController)
         {
@@ -67,5 +81,7 @@ public class Paint : MonoBehaviour
         {
             g.transform.FindChild(color).gameObject.SetActive(false);
         }        
+=======
+>>>>>>> origin/master
     }
 }

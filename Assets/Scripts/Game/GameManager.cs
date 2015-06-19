@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public bool soundOn = true;
     public Animator[] anim;
+<<<<<<< HEAD
     public int numberOfColors, score;
     public Text scoreText;
 
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     {
         gameManager = gameObject.GetComponent<GameManager>();
     }
+=======
+    public static bool isPaused = false;
+>>>>>>> origin/master
 
     void Start()
     {
@@ -25,9 +29,10 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        foreach (Animator a in anim)
+        /*foreach (Animator a in anim)
         {
             a.SetBool("GameStart", gameStart);
+<<<<<<< HEAD
         }
         SetScore(numberOfColors);
     }
@@ -37,4 +42,10 @@ public class GameManager : MonoBehaviour
         score += 1 + _numberOfColors;
         scoreText.text = "PONTOS: " + score;
     }
+=======
+        }*/
+
+      
+	}
+>>>>>>> origin/master
 }
