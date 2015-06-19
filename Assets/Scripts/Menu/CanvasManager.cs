@@ -47,22 +47,8 @@ public class CanvasManager : MonoBehaviour
         gameManager.soundOn = !gameManager.soundOn;
     }
 
-<<<<<<< HEAD
-   /* public void Pause()
-    {
-        gameManager.isPaused = !gameManager.isPaused;
-    }*/
-=======
-<<<<<<< HEAD
-   /* public void Pause()
-    {
-        gameManager.isPaused = !gameManager.isPaused;
-    }*/
-=======
     public void Pause()
     {
         GameManager.isPaused = !GameManager.isPaused;
     }
->>>>>>> origin/master
->>>>>>> origin/master
 }
