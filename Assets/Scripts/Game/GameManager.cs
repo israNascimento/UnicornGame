@@ -1,25 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool gameStart;
-    public static bool soundOn = true;
-    public Animator[] anim;
-    public static bool isPaused = false;
+    public bool gameStart;
 
-	void Start () 
+    public bool soundOn = true;
+    public Animator[] anim;
+    public int numberOfColors, score;
+    public Text scoreText;
+
+    public static GameManager gameManager;
+
+    void Awake()
     {
-	    
-	}
-	
-	void Update () 
+        gameManager = gameObject.GetComponent<GameManager>();
+    }
+
+    void Start()
     {
-        /*foreach (Animator a in anim)
+        score = 0;
+    }
+
+    void FixedUpdate()
+    {
+        foreach (Animator a in anim)
         {
             a.SetBool("GameStart", gameStart);
-        }*/
+        }
+        SetScore(numberOfColors);
+    }
 
-      
-	}
+    void SetScore(int _numberOfColors)
+    {
+        score += 1 + _numberOfColors;
+        scoreText.text = "PONTOS: " + score;
+    }
 }
