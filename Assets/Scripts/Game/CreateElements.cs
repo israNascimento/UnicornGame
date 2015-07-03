@@ -36,13 +36,14 @@ public class CreateElements : MonoBehaviour {
 
         if (GetTime(3, ref currentTimeEnemys))
         {
-            position = new Vector3(Random.Range(-6.32f, 6.75f), 12, -1);
-           // Instantiate(obstacles[Random.Range(0, obstacles.Length)], position, Quaternion.identity);
+            position = new Vector3(Random.Range(-10f, 10f), 25, -1);
+            Instantiate(obstacles[Random.Range(0, obstacles.Length)], position, Quaternion.identity);
         }
 
-        if (GetTime(3, ref currentTimeClouds))
+        if (GetTime(Random.Range((float)1, (float)3), ref currentTimeClouds))
         {
-
+            position = new Vector3(Random.Range(-10f, 10f), 25, -1);
+            Instantiate(clouds[Random.Range(0, clouds.Length)], position, Quaternion.identity);
         }
 
         random = Random.Range(0, limitNumber);
@@ -61,7 +62,6 @@ public class CreateElements : MonoBehaviour {
             currentTime = 0;
             return true;
         }
-
         return false;
     }
 }

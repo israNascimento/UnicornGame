@@ -21,5 +21,10 @@ public class CollisionDetect : MonoBehaviour
             collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             paint.PaintObject(color);
         }
+
+        if (collision.gameObject.name.Contains("Airplane"))
+        {
+            Application.LoadLevel(1);
+        }
     }
 }

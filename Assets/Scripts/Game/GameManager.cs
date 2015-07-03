@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         gameManager = gameObject.GetComponent<GameManager>();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.fullScreen = true;
     }
     public static bool isPaused = false;
 

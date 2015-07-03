@@ -51,4 +51,9 @@ public class CanvasManager : MonoBehaviour
     {
         GameManager.isPaused = !GameManager.isPaused;
     }
+
+    public void Reload()
+    {
+        Application.LoadLevel(0);
+    }
 }
