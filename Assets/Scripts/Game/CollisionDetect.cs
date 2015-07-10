@@ -22,7 +22,7 @@ public class CollisionDetect : MonoBehaviour
             paint.PaintObject(color);
         }
 
-        if (collision.gameObject.name.Contains("Airplane"))
+        if (collision.gameObject.name.Contains("Obstaculos"))
         {
             Application.LoadLevel(1);
         }

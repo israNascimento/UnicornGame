@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Animator[] anim;
     public int numberOfColors, score;
     public Text scoreText;
-
+    public Image imagePause;
     public static GameManager gameManager;
 
     void Awake()
@@ -35,11 +35,25 @@ public class GameManager : MonoBehaviour
         SetScore(numberOfColors);
     }
 
+    public void Pause()
+    {
+        if (Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+            this.imagePause.sprite = Resources.Load<Sprite>("Menu/Botoes-02");
+        }
+        else
+        {
+            Time.timeScale = 1;
+            this.imagePause.sprite = Resources.Load<Sprite>("Menu/Botoes-09");
+        }
+    }
+
     void SetScore(int _numberOfColors)
     {
         if (!gameStart)
             return;
-        score += 30 * _numberOfColors+1;
-        scoreText.text = "PONTOS: " + score;
+        score +=(int)( 30 * Mathf.Pow(2f, (float)_numberOfColors));
+        scoreText.text = "PONTOS: " + score ;
     }
 }

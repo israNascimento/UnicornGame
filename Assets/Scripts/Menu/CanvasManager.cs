@@ -40,16 +40,16 @@ public class CanvasManager : MonoBehaviour
     public void SoundClick()
     {
         if (gameManager.soundOn)
-            imageSound.sprite = Resources.Load<Sprite>("Menu/Sound_Off");
+            imageSound.sprite = Resources.Load<Sprite>("Menu/Buttons/RED BUTTONS/Botoes-15");
 
         else
-            imageSound.sprite = Resources.Load<Sprite>("Menu/Botoes-06");
+            imageSound.sprite = Resources.Load<Sprite>("Menu/Buttons/RED BUTTONS/Botoes-16");
         gameManager.soundOn = !gameManager.soundOn;
     }
 
     public void Pause()
     {
-        GameManager.isPaused = !GameManager.isPaused;
+        gameManager.Pause();
     }
 
     public void Reload()
